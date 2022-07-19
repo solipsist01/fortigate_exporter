@@ -55,10 +55,11 @@ func probeVPNIPSec(c http.FortiHTTP, meta *TargetMetadata) ([]prometheus.Metric,
 			/*
 			  type 'dialup' seems to be client vpn.
 			  Not sure exactly what the difference is between probeVPNSsl
-			*/
+			
 			if i.Type == "dialup" {
 				continue
 			}
+			*/
 			for _, t := range i.ProxyID {
 				s := 0.0
 				if t.Status == "up" {
